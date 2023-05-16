@@ -3,12 +3,7 @@ export function getRandomFact () {
   return fetch(URL_API_FACT)
     .then(data => data.json())
     .then(data => {
-      console.log(data)
-      const words = data.fact.split(' ', 5).join(' ')
-      console.log(words)
-
-      // setFact(words)
-      return words
+      return data.fact
     })
     .catch(err => console.log(err))
 }
