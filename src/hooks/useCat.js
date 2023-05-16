@@ -5,6 +5,8 @@ export function useCat ({ fact }) {
   const [imageUrl, setImageUrl] = useState(null)
 
   useEffect(() => {
+    if (!fact) return
+
     getImageCat({ fact }).then(urlCat => setImageUrl(urlCat))
   }, [fact])
 
