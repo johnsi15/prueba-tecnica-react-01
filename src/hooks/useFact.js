@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react'
 import { getRandomFact } from '../services/fact'
 export function useFact () {
   const [fact, setFact] = useState(null)
-
-  useEffect(() => {
+  const refreshFact = () => {
     getRandomFact().then(word => {
       const fiveFirstWords = word.split(' ', 5).join(' ')
-      console.log(fiveFirstWords)
+      // console.log(fiveFirstWords)
       setFact(fiveFirstWords)
     })
-  }, [])
+  }
 
-  return { fact }
+  useEffect(refreshFact, [])
+
+  return { fact, refreshFact }
 }
