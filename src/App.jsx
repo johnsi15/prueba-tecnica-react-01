@@ -16,7 +16,7 @@ function App () {
     <>
       <h1>App the cats with the first 5 words</h1>
       <main>
-        <button onClick={handleClick}>Get new fact</button>
+        <button className='button-get-fact' onClick={handleClick}>Get new fact</button>
         {fact && <h2 className='fact'>This is a cat fact: {fact}</h2>}
         {imageUrl && <img src={imageUrl} alt={`cat - ${fact}`} />}
       </main>
